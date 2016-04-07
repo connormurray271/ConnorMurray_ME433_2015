@@ -25,8 +25,8 @@
 // DEVCFG2 - get the CPU clock to 48MHz
 #pragma config FPLLIDIV = DIV_2 // divide input clock to be in range 4-5MHz (divide by 2)
 #pragma config FPLLMUL = MUL_24 // multiply clock after FPLLIDIV (multiply by 24)
-#pragma config FPLLODIV = DIV_4 // divide clock after FPLLMUL to get 48MHz (divide by 4)
-#pragma config UPLLIDIV = DIV_12 // divider for the 8MHz input clock, then multiply by 12 to get 48MHz for USB
+#pragma config FPLLODIV = DIV_2 // divide clock after FPLLMUL to get 48MHz (divide by 2)
+#pragma config UPLLIDIV = DIV_4 // divider for the 8MHz input clock, then multiply by 12 to get 48MHz for USB
 #pragma config UPLLEN = ON // USB clock on
 
 // DEVCFG3
@@ -36,8 +36,43 @@
 #pragma config FUSBIDIO = ON // USB pins controlled by USB module
 #pragma config FVBUSONIO = ON // USB BUSON controlled by USB module
 
-int main(){
-    while(1){
-        ;
+int main() {
+
+    __builtin_disable_interrupts();
+
+    // set the CP0 CONFIG register to indicate that kseg0 is cacheable (0x3)
+    __builtin_mtc0(_CP0_CONFIG, _CP0_CONFIG_SELECT, 0xa4210583);
+
+    // 0 data RAM access wait states
+    BMXCONbits.BMXWSDRM = 0x0;
+
+    // enable multi vector interrupts
+    INTCONbits.MVEC = 0x1;
+
+    // disable JTAG to get pins back
+    DDPCONbits.JTAGEN = 0;
+    
+    TRISAbits.TRISA4 = 0;    //make A4 an output
+    TRISBbits.TRISB4 = 1;    //make B4 an input
+    LATAbits.LATA4 = 1;      //turn on A4 LED
+    
+    __builtin_enable_interrupts();
+    
+    _CP0_SET_COUNT(0);
+    
+    while(1) {
+        
+        if(!PORTBbits.RB4){
+            LATAbits.LATA4 = 0;
+        }
+        
+        if(_CP0_GET_COUNT() > 12000){
+            LATAbits.LATA4 = !LATAbits.LATA4;
+            _CP0_SET_COUNT(0);
+        }
+	    // use _CP0_SET_COUNT(0) and _CP0_GET_COUNT() to test the PIC timing
+		// remember the core timer runs at half the CPU speed
     }
+    
+    
 }
