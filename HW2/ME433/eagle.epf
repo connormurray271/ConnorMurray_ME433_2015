@@ -346,7 +346,6 @@ UsedLibrary="/Applications/EAGLE-7.5.0/lbr/xilinx-xc9.lbr"
 UsedLibrary="/Applications/EAGLE-7.5.0/lbr/xilinx-xcv.lbr"
 UsedLibrary="/Applications/EAGLE-7.5.0/lbr/zetex.lbr"
 UsedLibrary="/Applications/EAGLE-7.5.0/lbr/zilog.lbr"
-UsedLibrary="433.lbr"
 
 [Desktop]
 Screen="1280 800"
