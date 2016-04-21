@@ -16,5 +16,12 @@ void initSPI1(void){
 
 
 char SPI1_IO(char write){
+  LATBbits.LATB7 = 0;     //open communication
   SPI1BUF = write;        //send to buffer
+  LATBbits.LATB7 = 1;     //close communication
+}
+
+setVoltage(char channel, char voltage){
+  
+
 }
