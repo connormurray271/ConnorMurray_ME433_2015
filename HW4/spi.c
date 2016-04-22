@@ -22,6 +22,13 @@ char SPI1_IO(char write){
 }
 
 setVoltage(char channel, char voltage){
-  
+  if(channel == 0)
+  {
+    int write = ((0b0111 << 8) || voltage) << 4;
+    SPI1_IO(write);
+  }else if(channel == 1){
+    int write = ((0b1111 << 8) || voltage) << 4;
+    SPI1_IO(write);
+  }
 
 }
