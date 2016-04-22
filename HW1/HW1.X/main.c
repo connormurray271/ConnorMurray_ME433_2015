@@ -1,5 +1,6 @@
 #include<xc.h>           // processor SFR definitions
 #include<sys/attribs.h>  // __ISR macro
+#include "spi.h"
 
 // DEVCFG0
 #pragma config DEBUG = OFF // no debugging
@@ -56,6 +57,8 @@ int main() {
     TRISBbits.TRISB4 = 1;    //make B4 an input
     LATAbits.LATA4 = 1;      //turn on A4 LED
     
+    initSPI1();
+    
     __builtin_enable_interrupts();
     
     _CP0_SET_COUNT(0);
@@ -70,9 +73,8 @@ int main() {
             LATAbits.LATA4 = !LATAbits.LATA4;
             _CP0_SET_COUNT(0);
         }
-	    // use _CP0_SET_COUNT(0) and _CP0_GET_COUNT() to test the PIC timing
-		// remember the core timer runs at half the CPU speed
+        
+        setVoltage(0, 11111111);
     }
-    
     
 }

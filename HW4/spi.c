@@ -1,3 +1,5 @@
+#include "spi.h"
+
 void initSPI1(void){
   RPB8Rbits.RPB8R = 0b0011;    //assign SDO1 to B8
   RPB7Rbits.RPB7R = 0b0011;    //assign SS1 to B7
@@ -30,5 +32,4 @@ setVoltage(char channel, char voltage){
     int write = ((0b1111 << 8) || voltage) << 4;
     SPI1_IO(write);
   }
-
 }
