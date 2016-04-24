@@ -5,8 +5,8 @@
 
 void initI2C2(void);                      // set up I2C2
 void initExpander(void);                  // set up expander
-void setExpander(char pin, char level);   // set the expander
 char getExpander(void);                   // read the expander
+void setExpander(char pin, char level);   // set the expander
 
 void i2c_master_setup(void);              // set up I2C 1 as a master, at 100 kHz
 void i2c_master_start(void);              // send a START signal

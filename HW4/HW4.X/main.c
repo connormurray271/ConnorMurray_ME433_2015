@@ -1,6 +1,7 @@
 #include<xc.h>           // processor SFR definitions
 #include<sys/attribs.h>  // __ISR macro
 #include "spi.h"
+#include "i2c_master_noint.h"
 
 // DEVCFG0
 #pragma config DEBUG = OFF // no debugging
@@ -54,10 +55,18 @@ int main() {
     DDPCONbits.JTAGEN = 0;
 
     setVoltage(0, 0xFF);
-    
+
+    initI2C2();
+    i2c_master_setup();
+    initExpander();
+
     __builtin_enable_interrupts();
 
     while(1) {
+      char status = getExpander();
+      char g7 = (status & 0x80) >> 7;
+      setExpander(7, g7);
+
 
     }
 
