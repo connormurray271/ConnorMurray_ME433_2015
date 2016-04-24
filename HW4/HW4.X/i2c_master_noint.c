@@ -10,7 +10,11 @@ void initI2C2(void){
 }
 
 void initExpander(void){
-  
+  i2c_master_start();
+  i2c_master_send(0x20<1|0);    // send slave address
+  i2c_master_send(0x00);        // IODIR register
+  i2c_master_send(0xF0);        // GP0-3 outputs, GP4-7 inputs
+  i2c_master_stop();
 }
 
 void setExpander(char pin, char level){
