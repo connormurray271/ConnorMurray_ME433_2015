@@ -1,5 +1,6 @@
 #include<xc.h>           // processor SFR definitions
 #include<sys/attribs.h>  // __ISR macro
+#include "spi.h"
 
 // DEVCFG0
 #pragma config DEBUG = OFF // no debugging
@@ -51,26 +52,14 @@ int main() {
 
     // disable JTAG to get pins back
     DDPCONbits.JTAGEN = 0;
-    
-    TRISAbits.TRISA4 = 0;    //make A4 an output
-    TRISBbits.TRISB4 = 1;    //make B4 an input
-    LATAbits.LATA4 = 1;      //turn on A4 LED
+
+    setVoltage(0, 0xFF);
     
     __builtin_enable_interrupts();
-    
-    _CP0_SET_COUNT(0);
-    
+
     while(1) {
-        
-        if(!PORTBbits.RB4){
-            LATAbits.LATA4 = 0;
-        }
-        
-        if(_CP0_GET_COUNT() > 12000){
-            LATAbits.LATA4 = !LATAbits.LATA4;
-            _CP0_SET_COUNT(0);
-        }
-        
+
     }
-    
+
+
 }
