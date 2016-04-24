@@ -65,7 +65,7 @@ int main() {
     while(1) {
       char status = getExpander();
       char g7 = (status & 0x80) >> 7;
-      setExpander(7, g7);
+      setExpander(0, g7);
 
 
     }
