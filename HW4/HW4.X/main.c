@@ -66,7 +66,7 @@ int main() {
       char g7 = (status & 0x80) >> 7;
       setExpander(0, g7);
 
-      setVoltage(1, 0xFF);
+      setVoltage(0, 0xFF);
       setVoltage(1, 0xFF);
 
 
