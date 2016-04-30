@@ -1,7 +1,6 @@
 #include<xc.h>           // processor SFR definitions
 #include<sys/attribs.h>  // __ISR macro
 #include "spi.h"
-#include "i2c_master_noint.h"
 
 // DEVCFG0
 #pragma config DEBUG = OFF // no debugging
@@ -16,7 +15,7 @@
 #pragma config FSOSCEN = OFF // turn off secondary oscillator
 #pragma config IESO = OFF // no switching clocks
 #pragma config POSCMOD = HS // high speed crystal mode
-#pragma config OSCIOFNC = ON // free up secondary osc pins
+#pragma config OSCIOFNC = OFF // free up secondary osc pins
 #pragma config FPBDIV = DIV_1 // divide CPU freq by 1 for peripheral bus clock
 #pragma config FCKSM = CSDCMD // do not enable clock switch
 #pragma config WDTPS = PS1 // slowest wdt
@@ -32,7 +31,7 @@
 #pragma config UPLLEN = ON // USB clock on
 
 // DEVCFG3
-#pragma config USERID = 0 // some 16bit userid, doesn't matter what
+#pragma config USERID = 0x0001 // some 16bit userid, doesn't matter what
 #pragma config PMDL1WAY = OFF // allow multiple reconfigurations
 #pragma config IOL1WAY = OFF // allow multiple reconfigurations
 #pragma config FUSBIDIO = ON // USB pins controlled by USB module
@@ -54,8 +53,8 @@ int main() {
     // disable JTAG to get pins back
     DDPCONbits.JTAGEN = 0;
 
-    setVoltage(0, 0xFF);
 
+    initSPI1();
     initI2C2();
     i2c_master_setup();
     initExpander();
@@ -66,6 +65,9 @@ int main() {
       char status = getExpander();
       char g7 = (status & 0x80) >> 7;
       setExpander(0, g7);
+
+      setVoltage(1, 0xFF);
+      setVoltage(1, 0xFF);
 
 
     }
