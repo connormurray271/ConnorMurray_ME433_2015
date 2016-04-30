@@ -1,6 +1,7 @@
 #include<xc.h>           // processor SFR definitions
 #include<sys/attribs.h>  // __ISR macro
 #include "spi.h"
+#include "i2c.h"
 
 // DEVCFG0
 #pragma config DEBUG = OFF // no debugging
@@ -62,9 +63,9 @@ int main() {
     __builtin_enable_interrupts();
 
     while(1) {
-      char status = getExpander();
-      char g7 = (status & 0x80) >> 7;
-      setExpander(0, g7);
+      char status = getExpander();          //read the expander
+      char g7 = (status & 0x80) >> 7;       //get level of pin g7
+      setExpander(0, g7);                   //set pin 0 to level of g7
 
       setVoltage(0, 0xFF);
       setVoltage(1, 0xFF);

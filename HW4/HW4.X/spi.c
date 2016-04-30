@@ -6,7 +6,6 @@
 void initSPI1(void){
   RPB13Rbits.RPB13R = 0b0011;    //assign SDO1 to B13
   SDI1Rbits.SDI1R = 0b0100;   //assign SDI1 to B8
-  ANSELBbits.ANSB14 = 0;
 
   SPI1CON = 0;              //turn off spi and reset it
   SPI1BUF;                  //clear rx buffer by reading from it
