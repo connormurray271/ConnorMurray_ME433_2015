@@ -1,22 +1,21 @@
 #include <xc.h>
 #include "spi.h"
 
-#define CS LATBbits.LATB7      //chip select pin
+#define CS LATBbits.LATB7      //chip select pin is B7
 
 void initSPI1(void){
   RPB13Rbits.RPB13R = 0b0011;    //assign SDO1 to B13
-  SDI1Rbits.SDI1R = 0b0100;   //assign SDI1 to B8
+  SDI1Rbits.SDI1R = 0b0100;      //assign SDI1 to B8
+  TRISBbits.TRISB7 = 0;          //set B7  as output
+  CS = 1;                        //turn off communiation
 
   SPI1CON = 0;              //turn off spi and reset it
   SPI1BUF;                  //clear rx buffer by reading from it
-  SPI1BRG = 23999;              //set clock frequency to 2 MHz
+  SPI1BRG = 23999;
   SPI1STATbits.SPIROV = 0;  //clear overflow bit
   SPI1CONbits.CKE = 1;      //data changes when clock goes from hi to low
   SPI1CONbits.MSTEN = 1;    //master enabled
   SPI1CONbits.ON = 1;       //turn on SPI1
-
-  TRISBbits.TRISB7 = 0;     //set SSI pin (B7) as output
-  CS = 1;
 }
 
 
