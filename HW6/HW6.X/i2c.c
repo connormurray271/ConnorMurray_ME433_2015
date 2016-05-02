@@ -1,6 +1,7 @@
 #include<xc.h>           // processor SFR definitions
 #include<sys/attribs.h>  // __ISR macro
 
+#define ADDRESS 0b1101011   //IMU address
 
 // I2C Master utilities, 100 kHz, using polling rather than interrupts
 // The functions must be callled in the correct order as per the I2C protocol
@@ -55,24 +56,4 @@ void i2c_master_stop(void) {          // send a STOP:
 void initI2C2(void){
   ANSELBbits.ANSB2 = 0;         // turn off analog on B2
   ANSELBbits.ANSB3 = 0;         // turn off analog on B3
-}
-
-void initIMU(void){
-  i2c_master_start();
-  i2c_master_send(0b1101011 << 1|0);      //IMU address
-  i2c_master_send(0x10H);                 //CTRL1_XL
-  i2c_master_send(0b10000000);            //1.66 kHz, 2g, 400Hz
-  i2c_master_stop();
-
-  i2c_master_start();
-  i2c_master_send(0b1101011 << 1|0);     //IMU address
-  i2c_master_send(0x11H);                //CTRL2_G
-  i2c_master_send(0b1000001);            //1.66 kHz, 245 dps, gyroscope enabled
-  i2c_master_stop();
-
-  i2c_master_start();
-  i2c_master_send(0b1101011 << 1|0);     //IMU address
-  i2c_master_send(0x12H);                //CTRL3_C
-  i2c_master_send(0b00000100);           //IF_INC enabled
-  i2c_master_stop();
 }
