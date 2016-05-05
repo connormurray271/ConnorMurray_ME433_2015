@@ -11,7 +11,7 @@ void initSPI1(void){
 
   SPI1CON = 0;              //turn off spi and reset it
   SPI1BUF;                  //clear rx buffer by reading from it
-  SPI1BRG = 23999;
+  SPI1BRG = 47999;
   SPI1STATbits.SPIROV = 0;  //clear overflow bit
   SPI1CONbits.CKE = 1;      //data changes when clock goes from hi to low
   SPI1CONbits.MSTEN = 1;    //master enabled
@@ -29,7 +29,7 @@ char SPI1_IO(char write){
 
 void setVoltage(char channel, char voltage){
   CS = 0;             //open communication
-  SPI1_IO(((channel << 7) | 0b01110000) | voltage >> 4);
-  SPI1_IO((voltage & 0b00001111) << 4);
+  SPI1_IO((channel << 7 | 0b01110000)|(voltage >> 4));
+  SPI1_IO(voltage << 4);
   CS = 1;         //close communication
 }

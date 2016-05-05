@@ -55,12 +55,12 @@ int main() {
     DDPCONbits.JTAGEN = 0;
 
 
+    __builtin_enable_interrupts();
+
     initSPI1();
     initI2C2();
     i2c_master_setup();
     initExpander();
-
-    __builtin_enable_interrupts();
 
     while(1) {
       char status = getExpander();          //read the expander
