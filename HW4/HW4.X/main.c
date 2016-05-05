@@ -2,6 +2,7 @@
 #include<sys/attribs.h>  // __ISR macro
 #include "spi.h"
 #include "i2c.h"
+#include <math.h>
 
 // DEVCFG0
 #pragma config DEBUG = OFF // no debugging
@@ -62,13 +63,39 @@ int main() {
     i2c_master_setup();
     initExpander();
 
+    //sine wave
+    int sine[1000];
+    int i;
+    for(i = 0; i < 1000; i++){
+      sine[i] = 128 + 127*sin(2*3.14*10*i/1000);
+    }
+
+    int triangle[1000];
+    i = 0;
+    for(i = 0; i < 1000; i++){
+      triangle[i] = .256*i;
+    }
+
+    i = 0;
+
     while(1) {
+      _CP0_SET_COUNT(0);
+
+      if(_CP0_GET_COUNT() > 24000){
+        i++;
+        setVoltage(0, sine[i]);
+        setVoltage(1, triangle[i]);
+        _CP0_SET_COUNT(0);
+      }
+
+      if(i > 1000){
+        i = 0;
+      }
+
       char status = getExpander();          //read the expander
       char g7 = (status & 0x80) >> 7;       //get level of pin g7
       setExpander(0, g7);                   //set pin 0 to level of g7
 
-      setVoltage(0, 0xFF);
-      setVoltage(1, 0x00);
 
 
     }

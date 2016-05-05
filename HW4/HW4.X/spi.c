@@ -4,9 +4,10 @@
 #define CS LATBbits.LATB7      //chip select pin is B7
 
 void initSPI1(void){
-  RPB13Rbits.RPB13R = 0b0011;    //assign SDO1 to B13
-  SDI1Rbits.SDI1R = 0b0100;      //assign SDI1 to B8
-  TRISBbits.TRISB7 = 0;          //set B7  as output
+  //SCK1 is pin 25
+  RPB13Rbits.RPB13R = 0b0011;    //assign SDO1 to B13 (pin 24)
+  SDI1Rbits.SDI1R = 0b0100;      //assign SDI1 to B8 (pin 17)
+  TRISBbits.TRISB7 = 0;          //set B7  as output (pin 16)
   CS = 1;                        //turn off communiation
 
   SPI1CON = 0;              //turn off spi and reset it
