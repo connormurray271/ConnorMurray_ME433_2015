@@ -9,9 +9,36 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.connormurray.helloworld.MainActivity">
 
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Go Cats"-->
+        <!--android:id="@+id/textView" />-->
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:visibility="visible">
+
+    </LinearLayout>
+
+    <SeekBar
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/seek1"
+        android:layout_margin="10dp"
+        android:progress="20"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Go Cats" />
+        android:text="initial value"
+        android:id="@+id/textView01"
+        />
 
 </RelativeLayout>
