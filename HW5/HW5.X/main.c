@@ -28,18 +28,9 @@ int main() {
 
     while(1) {
 
-      drawCharacter(50,100,0x4d);
-      drawCharacter(50,110,0x42);
-      drawCharacter(50,120,0x43);
-      drawCharacter(50,130,0x44);
-      drawCharacter(50,140,0x45);
-        
-
-      LCD_drawPixel(50,50,WHITE);
-      LCD_drawPixel(51,50,WHITE);
-      LCD_drawPixel(52,50,WHITE);
-      LCD_drawPixel(53,50,WHITE);
-      LCD_drawPixel(54,50,WHITE);
+      char message[100];
+      sprintf(message, "Go Cats\\n\\rI hope this works");
+      drawMessage(0,0,message);
     }
 
 }

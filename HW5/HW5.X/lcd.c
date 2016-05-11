@@ -204,3 +204,21 @@ void drawCharacter(unsigned short x, unsigned short y, char character){
 		}
 	}
 }
+
+void drawMessage(unsigned short x, unsigned short y, char* message){
+		//max start point for letter x-123, y-120
+	int i = 0;
+	while(message[i] && y < 121){
+		if(message[i] == '\\' && message[i+1] == 'n'){
+			y = y + 9;
+			i = i+2;
+		}else if(message[i] == '\\' && message[i+1] == 'r'){
+			x = 0;
+			i = i+2;
+		}else{
+			drawCharacter(x, y, message[i]);
+			x = x+6;
+			i++;
+		}
+	}
+}
