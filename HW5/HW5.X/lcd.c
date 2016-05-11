@@ -29,7 +29,7 @@ void SPI1_init() {
 
 	SPI1CON = 0; // turn off the spi module and reset it
     SPI1BUF; // clear the rx buffer by reading from it
-    SPI1BRG = 49999; // baud rate to 12 MHz [SPI1BRG = (48000000/(2*desired))-1]
+    SPI1BRG = 1; // baud rate to 12 MHz [SPI1BRG = (48000000/(2*desired))-1]
     SPI1STATbits.SPIROV = 0; // clear the overflow bit
     SPI1CONbits.CKE = 1; // data changes when clock goes from hi to lo (since CKP is 0)
     SPI1CONbits.MSTEN = 1; // master operation
@@ -193,13 +193,13 @@ void LCD_clearScreen(unsigned short color) {
 void drawCharacter(unsigned short x, unsigned short y, char character){
 	int i, j;
 	for(i = 0; i<5; i++){
-		char byte = ASCII[0x30 - 0x20][i];
+		char byte = ASCII[character - 0x20][i];
 		for(j = 0; j < 8; j++){
 			char bit = (byte >> j) & 0x1;
 			if(bit == 1){
-				LCD_drawPixel(x+i, y+j, BLACK);
-			}else{
 				LCD_drawPixel(x+i, y+j, WHITE);
+			}else{
+				LCD_drawPixel(x+i, y+j, BLACK);
 			}
 		}
 	}

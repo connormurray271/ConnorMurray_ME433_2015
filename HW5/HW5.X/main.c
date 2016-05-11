@@ -22,19 +22,24 @@ int main() {
 
     __builtin_enable_interrupts();
 
-    LCD_init();
     SPI1_init();
-    LCD_clearScreen(WHITE);
+    LCD_init();
+    LCD_clearScreen(BLACK);
 
     while(1) {
 
-      // drawCharacter(0,0,0x30);
+      drawCharacter(50,100,0x4d);
+      drawCharacter(50,110,0x42);
+      drawCharacter(50,120,0x43);
+      drawCharacter(50,130,0x44);
+      drawCharacter(50,140,0x45);
+        
 
-      LCD_drawPixel(50,50,BLACK);
-      LCD_drawPixel(51,50,BLACK);
-      LCD_drawPixel(52,50,BLACK);
-      LCD_drawPixel(53,50,BLACK);
-      LCD_drawPixel(54,50,BLACK);
+      LCD_drawPixel(50,50,WHITE);
+      LCD_drawPixel(51,50,WHITE);
+      LCD_drawPixel(52,50,WHITE);
+      LCD_drawPixel(53,50,WHITE);
+      LCD_drawPixel(54,50,WHITE);
     }
 
 }
