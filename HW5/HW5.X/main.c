@@ -24,13 +24,14 @@ int main() {
 
     SPI1_init();
     LCD_init();
-    LCD_clearScreen(BLACK);
+    LCD_clearScreen(BLUE);
 
     while(1) {
 
       char message[100];
-      sprintf(message, "Go Cats\\n\\rI hope this works");
-      drawMessage(0,0,message);
+      int n = 1337;
+      sprintf(message, "Hello world %d!", 1337);
+      drawMessage(28,32,message);
     }
 
 }

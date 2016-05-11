@@ -3,6 +3,7 @@
 #include "i2c.h"
 #include "imu.h"
 #include <math.h>
+#include "lcd.h"
 
 #define ADDRESS 0b1101011   //IMU address
 
@@ -54,6 +55,10 @@ int main() {
     OC2R = 1875;
     OC2CONbits.ON = 1;              //turn on OC2
 
+    SPI1_init();
+    LCD_init();
+    LCD_clearScreen(BLUE);
+
     while(1) {
       // char r = I2C_read_WHOAMI();
 
@@ -82,8 +87,21 @@ int main() {
       short accel_y = (data[11] << 8) | data[10];
       short accel_z = (data[13] << 8) | data[12];
 
-      OC1RS = (int)((((float)accel_x*2 + 32767.0)/65535.0)*(3749));
-      OC2RS = (int)((((float)accel_y*2 + 32767.0)/65535.0)*(3749));
+      // OC1RS = (int)((((float)accel_x*2 + 32767.0)/65535.0)*(3749));
+      // OC2RS = (int)((((float)accel_y*2 + 32767.0)/65535.0)*(3749));
+
+      char temp_mess[100];
+
+      char gyro_x_mess[100];
+      char gyro_y_mess[100];
+      char gyro_z_mess[100];
+
+      char accel_x_mess[100];
+      char accel_y_mess[100];
+      char accel_z_mess[100];
+
+      sprintf(accel_x_mess, "x-accelearation: %d", accel_x);
+      drawMessage(0,0,accel_x_mess);
     }
 
 

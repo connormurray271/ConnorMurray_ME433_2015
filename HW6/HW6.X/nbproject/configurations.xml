@@ -7,6 +7,7 @@
       <itemPath>i2c.h</itemPath>
       <itemPath>pic_setup.h</itemPath>
       <itemPath>imu.h</itemPath>
+      <itemPath>lcd.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -18,6 +19,7 @@
       <itemPath>main.c</itemPath>
       <itemPath>i2c.c</itemPath>
       <itemPath>imu.c</itemPath>
+      <itemPath>lcd.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
