@@ -48,12 +48,12 @@ int main() {
     OC1CONbits.ON = 1;              //turn on OC1
 
 
-    //OC2
-    RPA1Rbits.RPA1R = 0b0101;       //set OC2 on A1
-    OC2CONbits.OCM = 0b110;         //PWM mode without fault pin
-    OC2RS = 1875;                   //set duty cycle 50%
-    OC2R = 1875;
-    OC2CONbits.ON = 1;              //turn on OC2
+   //OC2
+   RPA1Rbits.RPA1R = 0b0101;       //set OC2 on A1
+   OC2CONbits.OCM = 0b110;         //PWM mode without fault pin
+   OC2RS = 1875;                   //set duty cycle 50%
+   OC2R = 1875;
+   OC2CONbits.ON = 1;              //turn on OC2
 
     SPI1_init();
     LCD_init();
@@ -100,8 +100,26 @@ int main() {
       char accel_y_mess[100];
       char accel_z_mess[100];
 
-      sprintf(accel_x_mess, "x-accelearation: %d", accel_x);
-      drawMessage(0,0,accel_x_mess);
+      sprintf(temp_mess, "temp: %1.1f", (float)temp);
+      drawMessage(0,0,temp_mess);
+
+      sprintf(gyro_x_mess, "x-gyro: %1.1f dps", (float)gyro_x+490);
+      drawMessage(0,12,gyro_x_mess);
+
+      sprintf(gyro_y_mess, "y-gyro: %1.1f dps", (float)gyro_y+490);
+      drawMessage(0,21,gyro_y_mess);
+
+      sprintf(gyro_z_mess, "z-gyro: %1.1f dps", (float)gyro_z+490);
+      drawMessage(0,30,gyro_z_mess);
+
+      sprintf(accel_x_mess, "x-accel: %1.1fg", (float)accel_x/16383);
+      drawMessage(0,42,accel_x_mess);
+
+      sprintf(accel_y_mess, "y-accel: %1.1fg", (float)accel_y/16383);
+      drawMessage(0,51,accel_y_mess);
+
+      sprintf(accel_z_mess, "z-accel: %1.1fg", (float)accel_z/16383);
+      drawMessage(0,60,accel_z_mess);
     }
 
 
