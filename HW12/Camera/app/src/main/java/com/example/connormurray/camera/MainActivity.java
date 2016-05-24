@@ -48,8 +48,8 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
 
         mTextView = (TextView) findViewById(R.id.cameraStatus);
 
-        rowControl = (SeekBar) findViewById(R.id.lineSeek);
-        rowTextView = (TextView) findViewById(R.id.line);
+        rowControl = (SeekBar) findViewById(R.id.rowSeek);
+        rowTextView = (TextView) findViewById(R.id.rowView);
 
         paint1.setColor(0xffff0000); // red
         paint1.setTextSize(24);
