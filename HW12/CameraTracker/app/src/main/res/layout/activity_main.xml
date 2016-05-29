@@ -51,7 +51,7 @@
             android:layout_margin="10dp"
             android:paddingTop="16dp"
             android:paddingBottom="16dp"
-            android:max="765" />
+            android:max="255" />
 
         <TextView
             android:layout_width="wrap_content"

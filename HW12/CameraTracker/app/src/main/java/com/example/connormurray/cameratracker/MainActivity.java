@@ -109,7 +109,7 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
         mCamera = Camera.open();
         Camera.Parameters parameters = mCamera.getParameters();
         parameters.setPreviewSize(640, 480);
-        parameters.setColorEffect(Camera.Parameters.EFFECT_MONO); // black and white
+//        parameters.setColorEffect(Camera.Parameters.EFFECT_MONO); // black and white
         parameters.setFocusMode(Camera.Parameters.FOCUS_MODE_INFINITY); // no autofocusing
         mCamera.setParameters(parameters);
         mCamera.setDisplayOrientation(90); // rotate to portrait mode
@@ -164,8 +164,9 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
                 // sum the red, green and blue, subtract from 255 to get the darkness of the pixel.
                 // if it is greater than some value (600 here), consider it black
                 // play with the 600 value if you are having issues reliably seeing the line
-                if (255*3-(red(pixelsTop[i])+green(pixelsTop[i])+blue(pixelsTop[i])) > colorThresh) {
+                if ((red(pixelsTop[i])) > colorThresh) {
                     thresholdedPixelsTop[i] = 255*3;
+                    canvas.drawCircle(i,startY,1,paint1);
                 }
                 else {
                     thresholdedPixelsTop[i] = 0;
@@ -197,8 +198,9 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
                 // sum the red, green and blue, subtract from 255 to get the darkness of the pixel.
                 // if it is greater than some value (600 here), consider it black
                 // play with the 600 value if you are having issues reliably seeing the line
-                if (255*3-(red(pixelsMid[i])+green(pixelsMid[i])+blue(pixelsMid[i])) > colorThresh) {
+                if ((red(pixelsMid[i])) > colorThresh) {
                     thresholdedPixelsMid[i] = 255*3;
+                    canvas.drawCircle(i,startY+separation,1,paint1);
                 }
                 else {
                     thresholdedPixelsMid[i] = 0;
@@ -230,8 +232,9 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
                 // sum the red, green and blue, subtract from 255 to get the darkness of the pixel.
                 // if it is greater than some value (600 here), consider it black
                 // play with the 600 value if you are having issues reliably seeing the line
-                if (255*3-(red(pixelsBot[i])+green(pixelsBot[i])+blue(pixelsBot[i])) > colorThresh) {
+                if ((red(pixelsBot[i])) > colorThresh) {
                     thresholdedPixelsBot[i] = 255*3;
+                    canvas.drawCircle(i,startY+2*separation,1,paint1);
                 }
                 else {
                     thresholdedPixelsBot[i] = 0;
