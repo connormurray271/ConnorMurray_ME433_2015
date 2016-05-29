@@ -139,44 +139,122 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
         final Canvas c = mSurfaceHolder.lockCanvas();
         if (c != null) {
 
-            int[] pixels = new int[bmp.getWidth()];
+            int sep = 100;
+
+            int[] pixelsTop = new int[bmp.getWidth()];
+            int[] pixelsMid = new int[bmp.getWidth()];
+            int[] pixelsBot = new int[bmp.getWidth()];
+
             int startY = rowRead; // which row in the bitmap to analyse to read
             // only look at one row in the image
-            bmp.getPixels(pixels, 0, bmp.getWidth(), 0, startY, bmp.getWidth(), 1); // (array name, offset inside array, stride (size of row), start x, start y, num pixels to read per row, num rows to read)
+            bmp.getPixels(pixelsTop, 0, bmp.getWidth(), 0, startY, bmp.getWidth(), 1); // (array name, offset inside array, stride (size of row), start x, start y, num pixels to read per row, num rows to read)
+            bmp.getPixels(pixelsMid, 0, bmp.getWidth(), 0, startY+sep, bmp.getWidth(), 1);
+            bmp.getPixels(pixelsBot, 0, bmp.getWidth(), 0, startY+2*sep, bmp.getWidth(), 1);
 
             // pixels[] is the RGBA data (in black an white).
             // instead of doing center of mass on it, decide if each pixel is dark enough to consider black or white
             // then do a center of mass on the thresholded array
-            int[] thresholdedPixels = new int[bmp.getWidth()];
-            int wbTotal = 0; // total mass
-            int wbCOM = 0; // total (mass time position)
+
+            //top
+            int[] thresholdedPixelsTop = new int[bmp.getWidth()];
+            int wbTotalTop = 0; // total mass
+            int wbCOMTop = 0; // total (mass time position)
             for (int i = 0; i < bmp.getWidth(); i++) {
                 // sum the red, green and blue, subtract from 255 to get the darkness of the pixel.
                 // if it is greater than some value (600 here), consider it black
                 // play with the 600 value if you are having issues reliably seeing the line
-                if (255*3-(red(pixels[i])+green(pixels[i])+blue(pixels[i])) > colorThresh) {
-                    thresholdedPixels[i] = 255*3;
+                if (255*3-(red(pixelsTop[i])+green(pixelsTop[i])+blue(pixelsTop[i])) > colorThresh) {
+                    thresholdedPixelsTop[i] = 255*3;
                 }
                 else {
-                    thresholdedPixels[i] = 0;
+                    thresholdedPixelsTop[i] = 0;
                 }
-                wbTotal = wbTotal + thresholdedPixels[i];
-                wbCOM = wbCOM + thresholdedPixels[i]*i;
+                wbTotalTop = wbTotalTop + thresholdedPixelsTop[i];
+                wbCOMTop = wbCOMTop + thresholdedPixelsTop[i]*i;
             }
-            int COM;
+            int COMTop;
             //watch out for divide by 0
-            if (wbTotal<=0) {
-                COM = bmp.getWidth()/2;
+            if (wbTotalTop<=0) {
+                COMTop = bmp.getWidth()/2;
             }
             else {
-                COM = wbCOM/wbTotal;
+                COMTop = wbCOMTop/wbTotalTop;
             }
 
             // draw a circle where you think the COM is
-            canvas.drawCircle(COM, startY, 5, paint1);
+            canvas.drawCircle(COMTop, startY, 5, paint1);
 
             // also write the value as text
-            canvas.drawText("COM = " + COM, 10, 200, paint1);
+            canvas.drawText("COM = " + COMTop, 10, startY, paint1);
+
+
+            //middle
+            int[] thresholdedPixelsMid = new int[bmp.getWidth()];
+            int wbTotalMid = 0; // total mass
+            int wbCOMMid = 0; // total (mass time position)
+            for (int i = 0; i < bmp.getWidth(); i++) {
+                // sum the red, green and blue, subtract from 255 to get the darkness of the pixel.
+                // if it is greater than some value (600 here), consider it black
+                // play with the 600 value if you are having issues reliably seeing the line
+                if (255*3-(red(pixelsMid[i])+green(pixelsMid[i])+blue(pixelsMid[i])) > colorThresh) {
+                    thresholdedPixelsMid[i] = 255*3;
+                }
+                else {
+                    thresholdedPixelsMid[i] = 0;
+                }
+                wbTotalMid = wbTotalMid + thresholdedPixelsMid[i];
+                wbCOMMid = wbCOMMid + thresholdedPixelsMid[i]*i;
+            }
+            int COMMid;
+            //watch out for divide by 0
+            if (wbTotalMid<=0) {
+                COMMid = bmp.getWidth()/2;
+            }
+            else {
+                COMMid = wbCOMMid/wbTotalMid;
+            }
+
+            // draw a circle where you think the COM is
+            canvas.drawCircle(COMMid, startY+sep, 5, paint1);
+
+            // also write the value as text
+            canvas.drawText("COM = " + COMMid, 10, startY+sep, paint1);
+
+
+            //bottom
+            int[] thresholdedPixelsBot = new int[bmp.getWidth()];
+            int wbTotalBot = 0; // total mass
+            int wbCOMBot = 0; // total (mass time position)
+            for (int i = 0; i < bmp.getWidth(); i++) {
+                // sum the red, green and blue, subtract from 255 to get the darkness of the pixel.
+                // if it is greater than some value (600 here), consider it black
+                // play with the 600 value if you are having issues reliably seeing the line
+                if (255*3-(red(pixelsBot[i])+green(pixelsBot[i])+blue(pixelsBot[i])) > colorThresh) {
+                    thresholdedPixelsBot[i] = 255*3;
+                }
+                else {
+                    thresholdedPixelsBot[i] = 0;
+                }
+                wbTotalBot = wbTotalBot + thresholdedPixelsBot[i];
+                wbCOMBot = wbCOMBot + thresholdedPixelsBot[i]*i;
+            }
+            int COMBot;
+            //watch out for divide by 0
+            if (wbTotalBot<=0) {
+                COMBot = bmp.getWidth()/2;
+            }
+            else {
+                COMBot = wbCOMBot/wbTotalBot;
+            }
+
+            // draw a circle where you think the COM is
+            canvas.drawCircle(COMBot, startY+2*sep, 5, paint1);
+
+            // also write the value as text
+            canvas.drawText("COM = " + COMBot, 10, startY+2*sep, paint1);
+
+
+
             c.drawBitmap(bmp, 0, 0, null);
             mSurfaceHolder.unlockCanvasAndPost(c);
 
