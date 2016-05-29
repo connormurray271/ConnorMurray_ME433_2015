@@ -18,6 +18,7 @@ import java.io.IOException;
 import static android.graphics.Color.blue;
 import static android.graphics.Color.green;
 import static android.graphics.Color.red;
+import static java.lang.Math.*;
 
 public class MainActivity extends Activity implements TextureView.SurfaceTextureListener {
     private Camera mCamera;
@@ -139,7 +140,7 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
         final Canvas c = mSurfaceHolder.lockCanvas();
         if (c != null) {
 
-            int sep = 100;
+            int separation = 100;
 
             int[] pixelsTop = new int[bmp.getWidth()];
             int[] pixelsMid = new int[bmp.getWidth()];
@@ -148,8 +149,8 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
             int startY = rowRead; // which row in the bitmap to analyse to read
             // only look at one row in the image
             bmp.getPixels(pixelsTop, 0, bmp.getWidth(), 0, startY, bmp.getWidth(), 1); // (array name, offset inside array, stride (size of row), start x, start y, num pixels to read per row, num rows to read)
-            bmp.getPixels(pixelsMid, 0, bmp.getWidth(), 0, startY+sep, bmp.getWidth(), 1);
-            bmp.getPixels(pixelsBot, 0, bmp.getWidth(), 0, startY+2*sep, bmp.getWidth(), 1);
+            bmp.getPixels(pixelsMid, 0, bmp.getWidth(), 0, startY+separation, bmp.getWidth(), 1);
+            bmp.getPixels(pixelsBot, 0, bmp.getWidth(), 0, startY+2*separation, bmp.getWidth(), 1);
 
             // pixels[] is the RGBA data (in black an white).
             // instead of doing center of mass on it, decide if each pixel is dark enough to consider black or white
@@ -215,10 +216,10 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
             }
 
             // draw a circle where you think the COM is
-            canvas.drawCircle(COMMid, startY+sep, 5, paint1);
+            canvas.drawCircle(COMMid, startY+separation, 5, paint1);
 
             // also write the value as text
-            canvas.drawText("COM = " + COMMid, 10, startY+sep, paint1);
+            canvas.drawText("COM = " + COMMid, 10, startY+separation, paint1);
 
 
             //bottom
@@ -248,21 +249,32 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
             }
 
             // draw a circle where you think the COM is
-            canvas.drawCircle(COMBot, startY+2*sep, 5, paint1);
+            canvas.drawCircle(COMBot, startY+2*separation, 5, paint1);
 
             // also write the value as text
-            canvas.drawText("COM = " + COMBot, 10, startY+2*sep, paint1);
+            canvas.drawText("COM = " + COMBot, 10, startY+2*separation, paint1);
 
 
 
             c.drawBitmap(bmp, 0, 0, null);
             mSurfaceHolder.unlockCanvasAndPost(c);
 
+            //calculate angle between points
+            double bot_mid = hypot(COMBot - COMMid, separation);
+            double mid_top = hypot(COMMid - COMTop, separation);
+            double bot_top = hypot(COMBot - COMTop, 2*separation);
+
+            double angle = toDegrees(acos((pow(bot_mid, 2) + pow(bot_top, 2) - pow(mid_top, 2))/(2*bot_mid*bot_top)));
+
             // calculate the FPS to see how fast the code is running
             long nowtime = System.currentTimeMillis();
             long diff = nowtime - prevtime;
-            mTextView.setText("FPS " + 1000/diff);
+            mTextView.setText("FPS " + 1000/diff + "                Angle: " +angle);
             prevtime = nowtime;
+
+
+
+
         }
     }
 }
