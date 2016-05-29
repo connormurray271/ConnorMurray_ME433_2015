@@ -26,8 +26,11 @@ int main() {
     LCD_init();
     LCD_clearScreen(BLUE);
 
+    TRISAbits.TRISA4 = 0;    //make A4 an output
+
     while(1) {
 
+      LATAbits.LATA4 = 1;      //turn on A4 LED
       char message[100];
       int n = 1337;
       sprintf(message, "Hello world %d!", 1337);

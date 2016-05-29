@@ -32,7 +32,7 @@ int main() {
     unsigned char data[14];
 
     TRISAbits.TRISA4 = 0;    //make A4 an output
-    LATAbits.LATA4 = 0;      //turn on A4 LED
+    LATAbits.LATA4 = 0;      //turn off A4 LED
 
     //Timer2
     T2CONbits.TCKPS = 0b111;        //set prescaler to 256
