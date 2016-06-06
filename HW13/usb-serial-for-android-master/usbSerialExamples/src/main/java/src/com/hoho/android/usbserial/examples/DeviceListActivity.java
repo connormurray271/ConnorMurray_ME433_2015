@@ -208,7 +208,7 @@ public class DeviceListActivity extends Activity {
     }
 
     private void showConsoleActivity(UsbSerialPort port) {
-        SerialConsoleActivity.show(this, port);
+        src.com.hoho.android.usbserial.examples.SerialConsoleActivity.show(this, port);
     }
 
 }
