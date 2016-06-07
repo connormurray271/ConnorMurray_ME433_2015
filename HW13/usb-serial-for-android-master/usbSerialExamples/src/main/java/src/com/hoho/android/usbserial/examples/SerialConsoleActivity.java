@@ -55,7 +55,7 @@ public class SerialConsoleActivity extends Activity {
     SeekBar pwmControl;
     TextView pwmTextView;
 
-    private int duty = 0;
+    private int duty;
 
     private final String TAG = SerialConsoleActivity.class.getSimpleName();
 
@@ -208,8 +208,9 @@ public class SerialConsoleActivity extends Activity {
                 showStatus(mDumpTextView, "RI  - Ring Indicator", sPort.getRI());
                 showStatus(mDumpTextView, "RTS - Request To Send", sPort.getRTS());
 
-//                int i = 100;
-                String sendString = String.valueOf(duty) + '\n';
+                int i = 100;
+                String  sendString = String.valueOf(duty) + '\n';
+//                String sendString = String.valueOf(duty) + '\n';
                 try{
                     sPort.write(sendString.getBytes(),10);  //10 is the timeout
                 }
