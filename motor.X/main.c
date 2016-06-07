@@ -34,9 +34,20 @@ int main() {
 
     TRISAbits.TRISA4 = 0;
 
+    RPB8Rbits.RPB8R = 0b0101;       //set OC2 on B8
+    OC2CONbits.OCM = 0b110;         //PWM mode without fault pin
+    OC2RS = 3749;                   //set duty cycle 50%
+    OC2R = 3749;
+    OC2CONbits.ON = 1;              //turn on OC2
+
+    TRISBbits.TRISB7 = 0;
+
     while(1) {
-        OC1RS = 1875;
+        OC1RS = 3749;
         LATAbits.LATA4 = 0;
+
+        OC2RS = 3749;
+        LATBbits.LATB4 = 0;
     }
 
 
