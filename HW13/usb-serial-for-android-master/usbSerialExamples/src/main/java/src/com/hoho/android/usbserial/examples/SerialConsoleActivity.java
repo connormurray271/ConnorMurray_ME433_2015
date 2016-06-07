@@ -28,7 +28,6 @@ import android.hardware.usb.UsbDeviceConnection;
 import android.hardware.usb.UsbManager;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.WindowManager;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ScrollView;
@@ -53,9 +52,9 @@ import java.util.concurrent.Executors;
 public class SerialConsoleActivity extends Activity {
 
     SeekBar pwmControl;
-    TextView pwmTextView;
+    TextView pwmText;
 
-    int duty;
+    int pwm;
 
     private final String TAG = SerialConsoleActivity.class.getSimpleName();
 
@@ -106,9 +105,8 @@ public class SerialConsoleActivity extends Activity {
         setContentView(R.layout.serial_console);
 
         pwmControl = (SeekBar) findViewById(R.id.pwmSeek);
-        pwmTextView = (TextView) findViewById(R.id.pwmText);
+        pwmText = (TextView) findViewById(R.id.pwmText);
 
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         mTitleTextView = (TextView) findViewById(R.id.demoTitle);
         mDumpTextView = (TextView) findViewById(R.id.consoleText);
         mScrollView = (ScrollView) findViewById(R.id.demoScroller);
@@ -139,18 +137,15 @@ public class SerialConsoleActivity extends Activity {
 
     private void setMyControlListener(){
         pwmControl.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-
-
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                duty = progress;
+                pwm = progress;
 
-//                pwmTextView.setText("Duty Cycle: " + duty);
-                String sendString = String.valueOf(duty) + '\n';
-                try{
-                    sPort.write(sendString.getBytes(),10);  //10 is the timeout
+                String sendString = String.valueOf(pwm) + '\n';
+                try {
+                    sPort.write(sendString.getBytes(),10); // 10 is the timeout
                 }
-                catch (IOException e){}
+                catch (IOException e) {}
             }
 
             @Override
@@ -213,11 +208,11 @@ public class SerialConsoleActivity extends Activity {
                 showStatus(mDumpTextView, "RI  - Ring Indicator", sPort.getRI());
                 showStatus(mDumpTextView, "RTS - Request To Send", sPort.getRTS());
 
-                String sendString = String.valueOf(duty) + '\n';
-                try{
-                    sPort.write(sendString.getBytes(),10);  //10 is the timeout
+                String sendString = String.valueOf(pwm) + '\n';
+                try {
+                    sPort.write(sendString.getBytes(),10); // 10 is the timeout
                 }
-                catch (IOException e){}
+                catch (IOException e) {}
 
             } catch (IOException e) {
                 Log.e(TAG, "Error setting up device: " + e.getMessage(), e);
@@ -262,7 +257,7 @@ public class SerialConsoleActivity extends Activity {
 //        mDumpTextView.append(message);
 //        mScrollView.smoothScrollTo(0, mDumpTextView.getBottom());
 
-        pwmTextView.setText("Duty Cycle: " + HexDump.dumpHexString(data));
+        pwmText.setText(HexDump.dumpHexString(data));
     }
 
     /**
