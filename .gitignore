@@ -20,3 +20,7 @@
 /HW8/cdc_serial_emulator.X/dist/pic32mx795_pim_e16_int_dyn/
 /HW8/cdc_serial_emulator.X/nbproject/private/
 /HW8/cdc_serial_emulator.X/build/pic32mx795_pim_e16_int_dyn/
+/HW8/cdc_serial_emulator /firmware/cdc_serial_emulator.X/nbproject/private/
+/HW8/cdc_serial_emulator copy/firmware/cdc_serial_emulator.X/build/pic32mx795_pim_e16_int_dyn/
+/HW8/cdc_serial_emulator copy/firmware/cdc_serial_emulator.X/dist/pic32mx795_pim_e16_int_dyn/
+/HW8/cdc_serial_emulator copy/firmware/cdc_serial_emulator.X/nbproject/private/

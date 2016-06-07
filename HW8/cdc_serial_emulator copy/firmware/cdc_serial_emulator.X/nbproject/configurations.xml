@@ -12,12 +12,12 @@
             <logicalFolder name="f1" displayName="framework" projectFiles="true">
               <logicalFolder name="f1" displayName="system" projectFiles="true">
                 <logicalFolder name="f1" displayName="clk" projectFiles="true">
-                  <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/apps/usb/device/cdc_serial_emulator/firmware/src/system_config/pic32mx795_pim_e16_int_dyn/framework/system/clk/sys_clk_static.h</itemPath>
+                  <itemPath>../src/system_config/pic32mx795_pim_e16_int_dyn/framework/system/clk/sys_clk_static.h</itemPath>
                 </logicalFolder>
               </logicalFolder>
             </logicalFolder>
-            <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/apps/usb/device/cdc_serial_emulator/firmware/src/system_config/pic32mx795_pim_e16_int_dyn/system_config.h</itemPath>
-            <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/apps/usb/device/cdc_serial_emulator/firmware/src/system_config/pic32mx795_pim_e16_int_dyn/system_definitions.h</itemPath>
+            <itemPath>../src/system_config/pic32mx795_pim_e16_int_dyn/system_config.h</itemPath>
+            <itemPath>../src/system_config/pic32mx795_pim_e16_int_dyn/system_definitions.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f2"
                          displayName="pic32mz_ef_sk_int_dyn"
@@ -25,61 +25,61 @@
             <logicalFolder name="f1" displayName="framework" projectFiles="true">
               <logicalFolder name="f1" displayName="system" projectFiles="true">
                 <logicalFolder name="f1" displayName="clk" projectFiles="true">
-                  <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/apps/usb/device/cdc_serial_emulator/firmware/src/system_config/pic32mz_ef_sk_int_dyn/framework/system/clk/sys_clk_static.h</itemPath>
+                  <itemPath>../src/system_config/pic32mz_ef_sk_int_dyn/framework/system/clk/sys_clk_static.h</itemPath>
                 </logicalFolder>
               </logicalFolder>
             </logicalFolder>
-            <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/apps/usb/device/cdc_serial_emulator/firmware/src/system_config/pic32mz_ef_sk_int_dyn/system_config.h</itemPath>
-            <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/apps/usb/device/cdc_serial_emulator/firmware/src/system_config/pic32mz_ef_sk_int_dyn/system_definitions.h</itemPath>
+            <itemPath>../src/system_config/pic32mz_ef_sk_int_dyn/system_config.h</itemPath>
+            <itemPath>../src/system_config/pic32mz_ef_sk_int_dyn/system_definitions.h</itemPath>
           </logicalFolder>
         </logicalFolder>
-        <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/apps/usb/device/cdc_serial_emulator/firmware/src/app.h</itemPath>
+        <itemPath>../src/app.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="bsp" projectFiles="true">
         <logicalFolder name="f1" displayName="pic32mx795_pim+e16" projectFiles="true">
-          <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/bsp/pic32mx795_pim+e16/bsp_config.h</itemPath>
+          <itemPath>../../../../../../bsp/pic32mx795_pim+e16/bsp_config.h</itemPath>
         </logicalFolder>
         <logicalFolder name="f2" displayName="pic32mz_ef_sk" projectFiles="true">
-          <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/bsp/pic32mz_ef_sk/bsp_config.h</itemPath>
+          <itemPath>../../../../../../bsp/pic32mz_ef_sk/bsp_config.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="f1" displayName="framework" projectFiles="true">
         <logicalFolder name="f1" displayName="driver" projectFiles="true">
           <logicalFolder name="f3" displayName="tmr" projectFiles="true">
-            <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/driver/tmr/drv_tmr.h</itemPath>
+            <itemPath>../../../../../../framework/driver/tmr/drv_tmr.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f1" displayName="usart" projectFiles="true">
-            <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/driver/usart/drv_usart.h</itemPath>
+            <itemPath>../../../../../../framework/driver/usart/drv_usart.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f2" displayName="usb" projectFiles="true">
-            <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/driver/usb/drv_usb.h</itemPath>
+            <itemPath>../../../../../../framework/driver/usb/drv_usb.h</itemPath>
           </logicalFolder>
-          <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/driver/driver.h</itemPath>
+          <itemPath>../../../../../../framework/driver/driver.h</itemPath>
         </logicalFolder>
         <logicalFolder name="f2" displayName="system" projectFiles="true">
           <logicalFolder name="f1" displayName="common" projectFiles="true">
-            <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/system/common/sys_common.h</itemPath>
-            <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/system/common/sys_module.h</itemPath>
+            <itemPath>../../../../../../framework/system/common/sys_common.h</itemPath>
+            <itemPath>../../../../../../framework/system/common/sys_module.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f2" displayName="devcon" projectFiles="true">
-            <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/system/devcon/sys_devcon.h</itemPath>
-            <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/system/devcon/src/sys_devcon_cache.h</itemPath>
+            <itemPath>../../../../../../framework/system/devcon/sys_devcon.h</itemPath>
+            <itemPath>../../../../../../framework/system/devcon/src/sys_devcon_cache.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f3" displayName="int" projectFiles="true">
-            <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/system/int/sys_int.h</itemPath>
+            <itemPath>../../../../../../framework/system/int/sys_int.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f4" displayName="ports" projectFiles="true">
-            <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/system/ports/sys_ports.h</itemPath>
+            <itemPath>../../../../../../framework/system/ports/sys_ports.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f5" displayName="tmr" projectFiles="true">
-            <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/system/tmr/sys_tmr.h</itemPath>
+            <itemPath>../../../../../../framework/system/tmr/sys_tmr.h</itemPath>
           </logicalFolder>
-          <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/system/system.h</itemPath>
+          <itemPath>../../../../../../framework/system/system.h</itemPath>
         </logicalFolder>
         <logicalFolder name="f3" displayName="usb" projectFiles="true">
-          <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/usb/usb_device.h</itemPath>
-          <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/usb/usb_cdc.h</itemPath>
-          <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/usb/usb_device_cdc.h</itemPath>
+          <itemPath>../../../../../../framework/usb/usb_device.h</itemPath>
+          <itemPath>../../../../../../framework/usb/usb_cdc.h</itemPath>
+          <itemPath>../../../../../../framework/usb/usb_device_cdc.h</itemPath>
         </logicalFolder>
       </logicalFolder>
     </logicalFolder>
@@ -99,20 +99,20 @@
               <logicalFolder name="f1" displayName="system" projectFiles="true">
                 <logicalFolder name="f1" displayName="clk" projectFiles="true">
                   <logicalFolder name="f1" displayName="src" projectFiles="true">
-                    <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/apps/usb/device/cdc_serial_emulator/firmware/src/system_config/pic32mx795_pim_e16_int_dyn/framework/system/clk/src/sys_clk_static.c</itemPath>
+                    <itemPath>../src/system_config/pic32mx795_pim_e16_int_dyn/framework/system/clk/src/sys_clk_static.c</itemPath>
                   </logicalFolder>
                 </logicalFolder>
                 <logicalFolder name="f2" displayName="ports" projectFiles="true">
                   <logicalFolder name="f1" displayName="src" projectFiles="true">
-                    <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/apps/usb/device/cdc_serial_emulator/firmware/src/system_config/pic32mx795_pim_e16_int_dyn/framework/system/ports/src/sys_ports_static.c</itemPath>
+                    <itemPath>../src/system_config/pic32mx795_pim_e16_int_dyn/framework/system/ports/src/sys_ports_static.c</itemPath>
                   </logicalFolder>
                 </logicalFolder>
               </logicalFolder>
             </logicalFolder>
-            <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/apps/usb/device/cdc_serial_emulator/firmware/src/system_config/pic32mx795_pim_e16_int_dyn/system_init.c</itemPath>
-            <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/apps/usb/device/cdc_serial_emulator/firmware/src/system_config/pic32mx795_pim_e16_int_dyn/system_interrupt.c</itemPath>
-            <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/apps/usb/device/cdc_serial_emulator/firmware/src/system_config/pic32mx795_pim_e16_int_dyn/system_exceptions.c</itemPath>
-            <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/apps/usb/device/cdc_serial_emulator/firmware/src/system_config/pic32mx795_pim_e16_int_dyn/system_tasks.c</itemPath>
+            <itemPath>../src/system_config/pic32mx795_pim_e16_int_dyn/system_init.c</itemPath>
+            <itemPath>../src/system_config/pic32mx795_pim_e16_int_dyn/system_interrupt.c</itemPath>
+            <itemPath>../src/system_config/pic32mx795_pim_e16_int_dyn/system_exceptions.c</itemPath>
+            <itemPath>../src/system_config/pic32mx795_pim_e16_int_dyn/system_tasks.c</itemPath>
           </logicalFolder>
           <logicalFolder name="f2"
                          displayName="pic32mz_ef_sk_int_dyn"
@@ -121,31 +121,31 @@
               <logicalFolder name="f1" displayName="system" projectFiles="true">
                 <logicalFolder name="f1" displayName="clk" projectFiles="true">
                   <logicalFolder name="f1" displayName="src" projectFiles="true">
-                    <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/apps/usb/device/cdc_serial_emulator/firmware/src/system_config/pic32mz_ef_sk_int_dyn/framework/system/clk/src/sys_clk_static.c</itemPath>
+                    <itemPath>../src/system_config/pic32mz_ef_sk_int_dyn/framework/system/clk/src/sys_clk_static.c</itemPath>
                   </logicalFolder>
                 </logicalFolder>
                 <logicalFolder name="f2" displayName="ports" projectFiles="true">
                   <logicalFolder name="f1" displayName="src" projectFiles="true">
-                    <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/apps/usb/device/cdc_serial_emulator/firmware/src/system_config/pic32mz_ef_sk_int_dyn/framework/system/ports/src/sys_ports_static.c</itemPath>
+                    <itemPath>../src/system_config/pic32mz_ef_sk_int_dyn/framework/system/ports/src/sys_ports_static.c</itemPath>
                   </logicalFolder>
                 </logicalFolder>
               </logicalFolder>
             </logicalFolder>
-            <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/apps/usb/device/cdc_serial_emulator/firmware/src/system_config/pic32mz_ef_sk_int_dyn/system_init.c</itemPath>
-            <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/apps/usb/device/cdc_serial_emulator/firmware/src/system_config/pic32mz_ef_sk_int_dyn/system_interrupt.c</itemPath>
-            <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/apps/usb/device/cdc_serial_emulator/firmware/src/system_config/pic32mz_ef_sk_int_dyn/system_exceptions.c</itemPath>
-            <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/apps/usb/device/cdc_serial_emulator/firmware/src/system_config/pic32mz_ef_sk_int_dyn/system_tasks.c</itemPath>
+            <itemPath>../src/system_config/pic32mz_ef_sk_int_dyn/system_init.c</itemPath>
+            <itemPath>../src/system_config/pic32mz_ef_sk_int_dyn/system_interrupt.c</itemPath>
+            <itemPath>../src/system_config/pic32mz_ef_sk_int_dyn/system_exceptions.c</itemPath>
+            <itemPath>../src/system_config/pic32mz_ef_sk_int_dyn/system_tasks.c</itemPath>
           </logicalFolder>
         </logicalFolder>
-        <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/apps/usb/device/cdc_serial_emulator/firmware/src/app.c</itemPath>
-        <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/apps/usb/device/cdc_serial_emulator/firmware/src/main.c</itemPath>
+        <itemPath>../src/app.c</itemPath>
+        <itemPath>../src/main.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="bsp" projectFiles="true">
         <logicalFolder name="f1" displayName="pic32mx795_pim+e16" projectFiles="true">
-          <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/bsp/pic32mx795_pim+e16/bsp_sys_init.c</itemPath>
+          <itemPath>../../../../../../bsp/pic32mx795_pim+e16/bsp_sys_init.c</itemPath>
         </logicalFolder>
         <logicalFolder name="f2" displayName="pic32mz_ef_sk" projectFiles="true">
-          <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/bsp/pic32mz_ef_sk/bsp_sys_init.c</itemPath>
+          <itemPath>../../../../../../bsp/pic32mz_ef_sk/bsp_sys_init.c</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="f1" displayName="framework" projectFiles="true">
@@ -153,15 +153,15 @@
           <logicalFolder name="f3" displayName="tmr" projectFiles="true">
             <logicalFolder name="f1" displayName="src" projectFiles="true">
               <logicalFolder name="f1" displayName="dynamic" projectFiles="true">
-                <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/driver/tmr/src/dynamic/drv_tmr.c</itemPath>
+                <itemPath>../../../../../../framework/driver/tmr/src/dynamic/drv_tmr.c</itemPath>
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
           <logicalFolder name="f1" displayName="usart" projectFiles="true">
             <logicalFolder name="f1" displayName="src" projectFiles="true">
               <logicalFolder name="f1" displayName="dynamic" projectFiles="true">
-                <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/driver/usart/src/dynamic/drv_usart.c</itemPath>
-                <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/driver/usart/src/dynamic/drv_usart_read_write.c</itemPath>
+                <itemPath>../../../../../../framework/driver/usart/src/dynamic/drv_usart.c</itemPath>
+                <itemPath>../../../../../../framework/driver/usart/src/dynamic/drv_usart_read_write.c</itemPath>
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
@@ -169,16 +169,16 @@
             <logicalFolder name="f1" displayName="usbfs" projectFiles="true">
               <logicalFolder name="f1" displayName="src" projectFiles="true">
                 <logicalFolder name="f1" displayName="dynamic" projectFiles="true">
-                  <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/driver/usb/usbfs/src/dynamic/drv_usbfs.c</itemPath>
-                  <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/driver/usb/usbfs/src/dynamic/drv_usbfs_device.c</itemPath>
+                  <itemPath>../../../../../../framework/driver/usb/usbfs/src/dynamic/drv_usbfs.c</itemPath>
+                  <itemPath>../../../../../../framework/driver/usb/usbfs/src/dynamic/drv_usbfs_device.c</itemPath>
                 </logicalFolder>
               </logicalFolder>
             </logicalFolder>
             <logicalFolder name="f2" displayName="usbhs" projectFiles="true">
               <logicalFolder name="f1" displayName="src" projectFiles="true">
                 <logicalFolder name="f1" displayName="dynamic" projectFiles="true">
-                  <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/driver/usb/usbhs/src/dynamic/drv_usbhs.c</itemPath>
-                  <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/driver/usb/usbhs/src/dynamic/drv_usbhs_device.c</itemPath>
+                  <itemPath>../../../../../../framework/driver/usb/usbhs/src/dynamic/drv_usbhs.c</itemPath>
+                  <itemPath>../../../../../../framework/driver/usb/usbhs/src/dynamic/drv_usbhs_device.c</itemPath>
                 </logicalFolder>
               </logicalFolder>
             </logicalFolder>
@@ -187,34 +187,34 @@
         <logicalFolder name="f2" displayName="system" projectFiles="true">
           <logicalFolder name="f1" displayName="devcon" projectFiles="true">
             <logicalFolder name="f1" displayName="src" projectFiles="true">
-              <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/system/devcon/src/sys_devcon.c</itemPath>
-              <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/system/devcon/src/sys_devcon_pic32mx.c</itemPath>
-              <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/system/devcon/src/sys_devcon_pic32mz.c</itemPath>
-              <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/system/devcon/src/sys_devcon_cache_pic32mz.S</itemPath>
+              <itemPath>../../../../../../framework/system/devcon/src/sys_devcon.c</itemPath>
+              <itemPath>../../../../../../framework/system/devcon/src/sys_devcon_pic32mx.c</itemPath>
+              <itemPath>../../../../../../framework/system/devcon/src/sys_devcon_pic32mz.c</itemPath>
+              <itemPath>../../../../../../framework/system/devcon/src/sys_devcon_cache_pic32mz.S</itemPath>
             </logicalFolder>
           </logicalFolder>
           <logicalFolder name="f2" displayName="int" projectFiles="true">
             <logicalFolder name="f1" displayName="src" projectFiles="true">
-              <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/system/int/src/sys_int_pic32.c</itemPath>
+              <itemPath>../../../../../../framework/system/int/src/sys_int_pic32.c</itemPath>
             </logicalFolder>
           </logicalFolder>
           <logicalFolder name="f3" displayName="ports" projectFiles="true">
             <logicalFolder name="f1" displayName="src" projectFiles="true">
-              <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/system/ports/src/sys_ports.c</itemPath>
+              <itemPath>../../../../../../framework/system/ports/src/sys_ports.c</itemPath>
             </logicalFolder>
           </logicalFolder>
           <logicalFolder name="f4" displayName="tmr" projectFiles="true">
             <logicalFolder name="f1" displayName="src" projectFiles="true">
-              <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/system/tmr/src/sys_tmr.c</itemPath>
+              <itemPath>../../../../../../framework/system/tmr/src/sys_tmr.c</itemPath>
             </logicalFolder>
           </logicalFolder>
         </logicalFolder>
         <logicalFolder name="f3" displayName="usb" projectFiles="true">
           <logicalFolder name="f1" displayName="src" projectFiles="true">
             <logicalFolder name="f1" displayName="dynamic" projectFiles="true">
-              <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/usb/src/dynamic/usb_device.c</itemPath>
-              <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/usb/src/dynamic/usb_device_cdc.c</itemPath>
-              <itemPath>../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/usb/src/dynamic/usb_device_cdc_acm.c</itemPath>
+              <itemPath>../../../../../../framework/usb/src/dynamic/usb_device.c</itemPath>
+              <itemPath>../../../../../../framework/usb/src/dynamic/usb_device_cdc.c</itemPath>
+              <itemPath>../../../../../../framework/usb/src/dynamic/usb_device_cdc_acm.c</itemPath>
             </logicalFolder>
           </logicalFolder>
         </logicalFolder>
@@ -274,7 +274,7 @@
         <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
         <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
       </makeCustomizationType>
-      <item path="../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/apps/usb/device/cdc_serial_emulator/firmware/src/system_config/pic32mz_ef_sk_int_dyn/framework/system/clk/src/sys_clk_static.c"
+      <item path="../../../../../../bsp/pic32mz_ef_sk/bsp_config.h"
             ex="true"
             overriding="false">
         <C32>
@@ -290,7 +290,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/apps/usb/device/cdc_serial_emulator/firmware/src/system_config/pic32mz_ef_sk_int_dyn/framework/system/clk/sys_clk_static.h"
+      <item path="../../../../../../bsp/pic32mz_ef_sk/bsp_sys_init.c"
             ex="true"
             overriding="false">
         <C32>
@@ -306,7 +306,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/apps/usb/device/cdc_serial_emulator/firmware/src/system_config/pic32mz_ef_sk_int_dyn/framework/system/ports/src/sys_ports_static.c"
+      <item path="../../../../../../framework/driver/tmr/drv_tmr.h"
             ex="true"
             overriding="false">
         <C32>
@@ -322,7 +322,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/apps/usb/device/cdc_serial_emulator/firmware/src/system_config/pic32mz_ef_sk_int_dyn/system_config.h"
+      <item path="../../../../../../framework/driver/tmr/src/dynamic/drv_tmr.c"
             ex="true"
             overriding="false">
         <C32>
@@ -338,7 +338,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/apps/usb/device/cdc_serial_emulator/firmware/src/system_config/pic32mz_ef_sk_int_dyn/system_definitions.h"
+      <item path="../../../../../../framework/driver/usb/usbhs/src/dynamic/drv_usbhs.c"
             ex="true"
             overriding="false">
         <C32>
@@ -354,7 +354,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/apps/usb/device/cdc_serial_emulator/firmware/src/system_config/pic32mz_ef_sk_int_dyn/system_exceptions.c"
+      <item path="../../../../../../framework/driver/usb/usbhs/src/dynamic/drv_usbhs_device.c"
             ex="true"
             overriding="false">
         <C32>
@@ -370,7 +370,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/apps/usb/device/cdc_serial_emulator/firmware/src/system_config/pic32mz_ef_sk_int_dyn/system_init.c"
+      <item path="../../../../../../framework/system/devcon/src/sys_devcon_cache.h"
             ex="true"
             overriding="false">
         <C32>
@@ -386,7 +386,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/apps/usb/device/cdc_serial_emulator/firmware/src/system_config/pic32mz_ef_sk_int_dyn/system_interrupt.c"
+      <item path="../../../../../../framework/system/devcon/src/sys_devcon_cache_pic32mz.S"
             ex="true"
             overriding="false">
         <C32>
@@ -402,7 +402,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/apps/usb/device/cdc_serial_emulator/firmware/src/system_config/pic32mz_ef_sk_int_dyn/system_tasks.c"
+      <item path="../../../../../../framework/system/devcon/src/sys_devcon_pic32mz.c"
             ex="true"
             overriding="false">
         <C32>
@@ -418,7 +418,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/bsp/pic32mz_ef_sk/bsp_config.h"
+      <item path="../../../../../../framework/system/tmr/src/sys_tmr.c"
             ex="true"
             overriding="false">
         <C32>
@@ -434,7 +434,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/bsp/pic32mz_ef_sk/bsp_sys_init.c"
+      <item path="../../../../../../framework/system/tmr/sys_tmr.h"
             ex="true"
             overriding="false">
         <C32>
@@ -450,7 +450,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/driver/tmr/drv_tmr.h"
+      <item path="../src/system_config/pic32mz_ef_sk_int_dyn/framework/system/clk/src/sys_clk_static.c"
             ex="true"
             overriding="false">
         <C32>
@@ -466,7 +466,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/driver/tmr/src/dynamic/drv_tmr.c"
+      <item path="../src/system_config/pic32mz_ef_sk_int_dyn/framework/system/clk/sys_clk_static.h"
             ex="true"
             overriding="false">
         <C32>
@@ -482,7 +482,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/driver/usb/usbhs/src/dynamic/drv_usbhs.c"
+      <item path="../src/system_config/pic32mz_ef_sk_int_dyn/framework/system/ports/src/sys_ports_static.c"
             ex="true"
             overriding="false">
         <C32>
@@ -498,7 +498,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/driver/usb/usbhs/src/dynamic/drv_usbhs_device.c"
+      <item path="../src/system_config/pic32mz_ef_sk_int_dyn/system_config.h"
             ex="true"
             overriding="false">
         <C32>
@@ -514,7 +514,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/system/devcon/src/sys_devcon_cache.h"
+      <item path="../src/system_config/pic32mz_ef_sk_int_dyn/system_definitions.h"
             ex="true"
             overriding="false">
         <C32>
@@ -530,7 +530,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/system/devcon/src/sys_devcon_cache_pic32mz.S"
+      <item path="../src/system_config/pic32mz_ef_sk_int_dyn/system_exceptions.c"
             ex="true"
             overriding="false">
         <C32>
@@ -546,7 +546,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/system/devcon/src/sys_devcon_pic32mz.c"
+      <item path="../src/system_config/pic32mz_ef_sk_int_dyn/system_init.c"
             ex="true"
             overriding="false">
         <C32>
@@ -562,7 +562,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/system/tmr/src/sys_tmr.c"
+      <item path="../src/system_config/pic32mz_ef_sk_int_dyn/system_interrupt.c"
             ex="true"
             overriding="false">
         <C32>
@@ -578,7 +578,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/system/tmr/sys_tmr.h"
+      <item path="../src/system_config/pic32mz_ef_sk_int_dyn/system_tasks.c"
             ex="true"
             overriding="false">
         <C32>
@@ -886,7 +886,7 @@
         <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
         <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
       </makeCustomizationType>
-      <item path="../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/apps/usb/device/cdc_serial_emulator/firmware/src/system_config/pic32mx795_pim_e16_int_dyn/framework/system/clk/src/sys_clk_static.c"
+      <item path="../../../../../../bsp/pic32mx795_pim+e16/bsp_config.h"
             ex="true"
             overriding="false">
         <C32>
@@ -902,7 +902,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/apps/usb/device/cdc_serial_emulator/firmware/src/system_config/pic32mx795_pim_e16_int_dyn/framework/system/clk/sys_clk_static.h"
+      <item path="../../../../../../bsp/pic32mx795_pim+e16/bsp_sys_init.c"
             ex="true"
             overriding="false">
         <C32>
@@ -918,7 +918,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/apps/usb/device/cdc_serial_emulator/firmware/src/system_config/pic32mx795_pim_e16_int_dyn/framework/system/ports/src/sys_ports_static.c"
+      <item path="../../../../../../framework/driver/usb/usbfs/src/dynamic/drv_usbfs.c"
             ex="true"
             overriding="false">
         <C32>
@@ -934,7 +934,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/apps/usb/device/cdc_serial_emulator/firmware/src/system_config/pic32mx795_pim_e16_int_dyn/system_config.h"
+      <item path="../../../../../../framework/driver/usb/usbfs/src/dynamic/drv_usbfs_device.c"
             ex="true"
             overriding="false">
         <C32>
@@ -950,7 +950,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/apps/usb/device/cdc_serial_emulator/firmware/src/system_config/pic32mx795_pim_e16_int_dyn/system_definitions.h"
+      <item path="../../../../../../framework/system/devcon/src/sys_devcon_pic32mx.c"
             ex="true"
             overriding="false">
         <C32>
@@ -966,7 +966,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/apps/usb/device/cdc_serial_emulator/firmware/src/system_config/pic32mx795_pim_e16_int_dyn/system_exceptions.c"
+      <item path="../src/system_config/pic32mx795_pim_e16_int_dyn/framework/system/clk/src/sys_clk_static.c"
             ex="true"
             overriding="false">
         <C32>
@@ -982,7 +982,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/apps/usb/device/cdc_serial_emulator/firmware/src/system_config/pic32mx795_pim_e16_int_dyn/system_init.c"
+      <item path="../src/system_config/pic32mx795_pim_e16_int_dyn/framework/system/clk/sys_clk_static.h"
             ex="true"
             overriding="false">
         <C32>
@@ -998,7 +998,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/apps/usb/device/cdc_serial_emulator/firmware/src/system_config/pic32mx795_pim_e16_int_dyn/system_interrupt.c"
+      <item path="../src/system_config/pic32mx795_pim_e16_int_dyn/framework/system/ports/src/sys_ports_static.c"
             ex="true"
             overriding="false">
         <C32>
@@ -1014,7 +1014,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/apps/usb/device/cdc_serial_emulator/firmware/src/system_config/pic32mx795_pim_e16_int_dyn/system_tasks.c"
+      <item path="../src/system_config/pic32mx795_pim_e16_int_dyn/system_config.h"
             ex="true"
             overriding="false">
         <C32>
@@ -1030,7 +1030,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/bsp/pic32mx795_pim+e16/bsp_config.h"
+      <item path="../src/system_config/pic32mx795_pim_e16_int_dyn/system_definitions.h"
             ex="true"
             overriding="false">
         <C32>
@@ -1046,7 +1046,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/bsp/pic32mx795_pim+e16/bsp_sys_init.c"
+      <item path="../src/system_config/pic32mx795_pim_e16_int_dyn/system_exceptions.c"
             ex="true"
             overriding="false">
         <C32>
@@ -1062,7 +1062,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/driver/usb/usbfs/src/dynamic/drv_usbfs.c"
+      <item path="../src/system_config/pic32mx795_pim_e16_int_dyn/system_init.c"
             ex="true"
             overriding="false">
         <C32>
@@ -1078,7 +1078,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/driver/usb/usbfs/src/dynamic/drv_usbfs_device.c"
+      <item path="../src/system_config/pic32mx795_pim_e16_int_dyn/system_interrupt.c"
             ex="true"
             overriding="false">
         <C32>
@@ -1094,7 +1094,7 @@
         <C32Global>
         </C32Global>
       </item>
-      <item path="../../../../microchip/harmony/v1_07_01/apps/usb/microchip/harmony/v1_07_01/framework/system/devcon/src/sys_devcon_pic32mx.c"
+      <item path="../src/system_config/pic32mx795_pim_e16_int_dyn/system_tasks.c"
             ex="true"
             overriding="false">
         <C32>
