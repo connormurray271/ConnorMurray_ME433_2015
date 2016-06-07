@@ -12,37 +12,37 @@
         android:textSize="24sp"
         android:textStyle="bold" />
 
-    <View
-        android:id="@+id/separator"
-        android:layout_width="match_parent"
-        android:layout_height="1dip"
-        android:background="#eeeeee" />
+    <!--<View-->
+        <!--android:id="@+id/separator"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="1dip"-->
+        <!--android:background="#eeeeee" />-->
 
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/textBtnDTR"
-        android:id="@+id/checkBoxDTR" />
+    <!--<CheckBox-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/textBtnDTR"-->
+        <!--android:id="@+id/checkBoxDTR" />-->
 
 
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/textBtnRTS"
-        android:id="@+id/checkBoxRTS" />
+    <!--<CheckBox-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/textBtnRTS"-->
+        <!--android:id="@+id/checkBoxRTS" />-->
 
-    <SeekBar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/pwmSeek"
-        android:layout_gravity="center_horizontal"
-        android:max="100" />
+    <!--<SeekBar-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/pwmSeek"-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--android:max="100" />-->
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Duty Cycle: "
-        android:id="@+id/pwmText" />
+        android:text=" "
+        android:id="@+id/ocrsText" />
 
     <View
         android:id="@+id/separator2"
@@ -64,6 +64,55 @@
             android:layout_height="wrap_content"
             android:typeface="monospace" />
     </ScrollView>
+
+    <!--row counter-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Row:"
+        android:id="@+id/rowView"
+        />
+
+    <!--row slider -->
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rowSeek"
+        android:layout_margin="10dp"
+        android:max="479" />
+
+    <!--color counter-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Color: "
+        android:id="@+id/colorView"/>
+
+    <!--color slider-->
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/colorSeek"
+        android:layout_margin="10dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:max="255" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FPS:"
+        android:id="@+id/cameraStatus"/>
+
+    <SurfaceView
+        android:id="@+id/surfaceview"
+        android:layout_width="640px"
+        android:layout_height="480px" />
+
+    <TextureView
+        android:id="@+id/textureview"
+        android:layout_width="640px"
+        android:layout_height="480px" />
 
 
 </LinearLayout>
