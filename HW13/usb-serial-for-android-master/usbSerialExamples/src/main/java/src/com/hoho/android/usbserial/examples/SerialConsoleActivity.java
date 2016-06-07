@@ -28,11 +28,9 @@ import android.hardware.usb.UsbDeviceConnection;
 import android.hardware.usb.UsbManager;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.WindowManager;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ScrollView;
-import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.hoho.android.usbserial.driver.UsbSerialPort;
@@ -51,11 +49,6 @@ import java.util.concurrent.Executors;
  * @author mike wakerly (opensource@hoho.com)
  */
 public class SerialConsoleActivity extends Activity {
-
-    SeekBar pwmControl;
-    TextView pwmTextView;
-
-    private int duty;
 
     private final String TAG = SerialConsoleActivity.class.getSimpleName();
 
@@ -84,31 +77,26 @@ public class SerialConsoleActivity extends Activity {
     private final SerialInputOutputManager.Listener mListener =
             new SerialInputOutputManager.Listener() {
 
-        @Override
-        public void onRunError(Exception e) {
-            Log.d(TAG, "Runner stopped.");
-        }
-
-        @Override
-        public void onNewData(final byte[] data) {
-            SerialConsoleActivity.this.runOnUiThread(new Runnable() {
                 @Override
-                public void run() {
-                    SerialConsoleActivity.this.updateReceivedData(data);
+                public void onRunError(Exception e) {
+                    Log.d(TAG, "Runner stopped.");
                 }
-            });
-        }
-    };
+
+                @Override
+                public void onNewData(final byte[] data) {
+                    SerialConsoleActivity.this.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            SerialConsoleActivity.this.updateReceivedData(data);
+                        }
+                    });
+                }
+            };
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.serial_console);
-
-        pwmControl = (SeekBar) findViewById(R.id.pwmSeek);
-        pwmTextView = (TextView) findViewById(R.id.pwmText);
-
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         mTitleTextView = (TextView) findViewById(R.id.demoTitle);
         mDumpTextView = (TextView) findViewById(R.id.consoleText);
         mScrollView = (ScrollView) findViewById(R.id.demoScroller);
@@ -133,31 +121,6 @@ public class SerialConsoleActivity extends Activity {
             }
         });
 
-        setMyControlListener();
-
-    }
-
-    private void setMyControlListener(){
-        pwmControl.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-
-
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                duty = progress;
-
-                pwmTextView.setText("Duty Cycle: " + duty);
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
-        });
     }
 
 
@@ -208,13 +171,12 @@ public class SerialConsoleActivity extends Activity {
                 showStatus(mDumpTextView, "RI  - Ring Indicator", sPort.getRI());
                 showStatus(mDumpTextView, "RTS - Request To Send", sPort.getRTS());
 
-                int i = 100;
-                String  sendString = String.valueOf(duty) + '\n';
-//                String sendString = String.valueOf(duty) + '\n';
-                try{
-                    sPort.write(sendString.getBytes(),10);  //10 is the timeout
+                int i = 50;
+                String sendString = String.valueOf(i) + '\n';
+                try {
+                    sPort.write(sendString.getBytes(),10); // 10 is the timeout
                 }
-                catch (IOException e){}
+                catch (IOException e) {}
 
             } catch (IOException e) {
                 Log.e(TAG, "Error setting up device: " + e.getMessage(), e);
