@@ -1,0 +1,13 @@
+To track the line, I looked at one row of pixels and determined wether pixels reached a red threshold.
+
+I put 2 sliders in the app: one to set the red color threshold and one to set the row that was being read.
+
+To the PIC I send the center of mass that being read.
+The PIC subtracted that number from 320 (the center of the picture).
+I set the motors to default at 100% duty cycle.
+If the center of mass was off from the center of the picture, I linearly decreased the duty cycle in one of the motor, depending on which way the car needed to move.
+
+The robot worked pretty well in the Mechatronics Lab. The light was good enough that there was a big distinction in the red pixels in the green and brown on the mat.
+However, when we moved to the Willens Wing, at some parts of the course, the camera had trouble either picking up line, or distinguishing between the brown and the green.
+This was probably because there was more natural/red light, making it harder to distinguish between the line and the rest of the mat.
+It probably would have been better to test the difference between green and red pixels instead of just looking at red.
